@@ -46,12 +46,12 @@ export default {
       this.authenticatedUsername = user.login;
     },
   register(user) {
-    //alert.user.login
+    
     this.$http.post('participants', user) //biblioteka dodana wykorzystuje ioc kontener uruchamia usluge $http
     .then(response => {
-         // udało się
+         alert("Udało się");
      })
-     .catch(response => {});
+     .catch(response => {alert("Nie udało się... :( Status: "+response.status)});
     },
     logout() {
       this.authenticatedUsername = "";
